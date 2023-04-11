@@ -7,6 +7,7 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
@@ -18,7 +19,12 @@ export default defineConfig({
   plugins: [
     Vue(),
     DefineOptions(),
-
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      fullInstall: true,
+      include: [path.resolve(__dirname, 'locales/**')],
+    }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
 
