@@ -1,5 +1,5 @@
 <template>
-  <main font-dot p="t-6" m="x-auto" text="center gray-700 dark:gray-200" w="1/2">
+  <main font-dot p="t-6" m="x-auto" text="center gray-700 dark:gray-200" w="md:1/2 5/6">
     <TheNav />
     <RouterView />
   </main>

@@ -6,8 +6,11 @@ defineOptions({
 
 <template>
   <div>
-    Plant Records
-    植物
-    <TheItem />
+    <h2 text-xl mb-6>
+      {{ $t('title') }}
+    </h2>
+    <div grid gap-4 grid-cols-4>
+      <TheItem />
+    </div>
   </div>
 </template>
