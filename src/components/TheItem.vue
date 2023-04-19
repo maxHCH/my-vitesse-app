@@ -9,8 +9,8 @@ defineProps({
 
 <template>
   <div mx-auto>
-    <div w-20 h-20 overflow-hidden border="2px" :border-color="isDark ? 'gray-300' : 'gray-600'">
-      <img src="../assets/018.jpg" :alt="name" w-full h-full object-cover>
+    <div class="w-64 h-64 overflow-hidden">
+      <img class="object-contain w-full h-full" src="../assets/018.jpg" alt="your-image-alt">
     </div>
     <div mt-2 text-lg>
       {{ name }}
