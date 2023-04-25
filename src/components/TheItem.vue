@@ -8,12 +8,17 @@ defineProps({
 </script>
 
 <template>
-  <div mx-auto>
-    <div w-25 h-15 md:w-40 md:h-25 overflow-hidden>
+  <div mx-auto border="1px gray-300" pb-2>
+    <div max-w-30 h-15 md:max-w-40 md:h-25 overflow-hidden>
       <img object="cover center" w-full h-full src="../assets/018.jpg" alt="your-image-alt">
     </div>
-    <div mt-2 md:text-lg>
-      {{ name }}
+    <div px-2>
+      <div md:text-lg>
+        {{ name }}
+      </div>
+      <div text-left>
+        <TheTag v-for="i of 4" :key="i" mr-1 />
+      </div>
     </div>
   </div>
 </template>

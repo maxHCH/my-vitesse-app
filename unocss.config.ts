@@ -22,7 +22,7 @@ export default defineConfig({
     }),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: 'Noto Sans Traditional Chinese',
         serif: 'DM Serif Display',
         mono: 'DM Mono',
         dot: 'DotGothic16',

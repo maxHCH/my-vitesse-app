@@ -17,5 +17,6 @@ declare module '@vue/runtime-core' {
     TheInput: typeof import('./src/components/TheInput.vue')['default']
     TheItem: typeof import('./src/components/TheItem.vue')['default']
     TheNav: typeof import('./src/components/TheNav.vue')['default']
+    TheTag: typeof import('./src/components/TheTag.vue')['default']
   }
 }
