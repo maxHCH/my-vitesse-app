@@ -9,12 +9,9 @@
     "toggle_dark": "切換深色模式",
     "toggle_langs": "切換語言"
   },
-  "intro": {
-    "desc": "基於 Vite 的起始模板",
-    "dynamic-route": "動態路由演示",
-    "hi": "你好，{name}！",
-    "aka": "又稱",
-    "whats-your-name": "你叫什麼名字？"
+  "options": {
+    "date": "日期",
+    "tags": "標籤"
   },
   "not-found": "頁面未找到"
 }

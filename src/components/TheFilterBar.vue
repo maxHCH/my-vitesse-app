@@ -1,5 +1,26 @@
 <script setup lang="ts">
-const showInput = ref(false)
+import { useI18n } from 'vue-i18n'
+
+interface Options {
+  name: string
+  value: string
+  checked: boolean
+}
+const { t } = useI18n()
+const sort = ref(false)
+const showTips = ref(false)
+const options: Options[] = [
+  {
+    name: t('options.date'),
+    value: 'date',
+    checked: false,
+  },
+  {
+    name: t('options.tags'),
+    value: 'tags',
+    checked: false,
+  },
+]
 </script>
 
 <template>
@@ -10,8 +31,21 @@ const showInput = ref(false)
         :placeholder="$t('input_search')"
       >
     </div>
-    <button icon-btn text-lg @click="showInput = !showInput">
-      <div i-carbon-filter inline-block />
-    </button>
+    <div flex>
+      <div relative>
+        <button icon-btn text-xl mr-2 @click="showTips = !showTips">
+          <div i-carbon:settings-view inline-block />
+        </button>
+        <div v-show="showTips" absolute bg-gray-100 px-4 py-3>
+          <TheOptions v-for="item of options" :key="item.value" :name="item.name" :checked="item.checked" />
+        </div>
+      </div>
+      <button v-if="!sort" icon-btn text-xl @click="sort = !sort">
+        <div i-carbon:sort-descending inline-block />
+      </button>
+      <button v-else icon-btn text-xl @click="sort = !sort">
+        <div i-carbon:sort-ascending inline-block />
+      </button>
+    </div>
   </div>
 </template>

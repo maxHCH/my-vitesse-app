@@ -13,5 +13,6 @@ defineOptions({
     <div grid gap-4 md:grid-cols-4 grid-cols-3>
       <TheItem v-for="i of 12" :key="i" />
     </div>
+    <!-- <TheModal /> -->
   </div>
 </template>
