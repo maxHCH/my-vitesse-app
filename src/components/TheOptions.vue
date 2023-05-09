@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   name: {
     type: String,
     default: '',
@@ -9,10 +9,14 @@ defineProps({
     required: true,
   },
 })
+const emits = defineEmits(['update:checked'])
+function taggleOptionHandler() {
+  emits('update:checked', !props.checked)
+}
 </script>
 
 <template>
-  <button bg-gray-300 px-2px py-1px text-xs text-gray-700 :checked="checked" border-gray-400 hover:border-1>
-    {{ name }}
+  <button :class="checked && 'bg-gray-300'" px-1 text-xs text-gray-700 :checked="checked" flex justify-between content-center whitespace-nowrap @click="taggleOptionHandler">
+    <span>{{ name }}</span>
   </button>
 </template>

@@ -6,10 +6,10 @@ defineOptions({
 
 <template>
   <div>
-    <h2 text-2xl>
+    <h2 text-3xl>
       {{ $t('title') }}
     </h2>
-    <TheFilterBar my-4 />
+    <TheFilterBar mt-4 mb-6 />
     <div grid gap-4 md:grid-cols-4 grid-cols-3>
       <TheItem v-for="i of 12" :key="i" />
     </div>

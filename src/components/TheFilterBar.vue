@@ -9,7 +9,7 @@ interface Options {
 const { t } = useI18n()
 const sort = ref(false)
 const showTips = ref(false)
-const options: Options[] = [
+const options: Options[] = reactive([
   {
     name: t('options.date'),
     value: 'date',
@@ -20,7 +20,7 @@ const options: Options[] = [
     value: 'tags',
     checked: false,
   },
-]
+])
 </script>
 
 <template>
@@ -36,8 +36,8 @@ const options: Options[] = [
         <button icon-btn text-xl mr-2 @click="showTips = !showTips">
           <div i-carbon:settings-view inline-block />
         </button>
-        <div v-show="showTips" absolute bg-gray-100 px-4 py-3>
-          <TheOptions v-for="item of options" :key="item.value" :name="item.name" :checked="item.checked" />
+        <div v-if="showTips" absolute px-2 py-1 border-1 border-gray-300 bg-white>
+          <TheOptions v-for="item of options" :key="item.value" v-model:checked="item.checked" my-1 :name="item.name" />
         </div>
       </div>
       <button v-if="!sort" icon-btn text-xl @click="sort = !sort">

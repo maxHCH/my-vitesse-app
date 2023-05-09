@@ -9,3 +9,7 @@ body,
 html.dark {
   background: #333333;
 }
+:root {
+  --primary-color: #6e756e;
+  --dark-bg: #18181c;
+}
