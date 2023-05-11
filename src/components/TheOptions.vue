@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useCardStore } from '~/stores/card'
+
 const props = defineProps({
   name: {
     type: String,
@@ -8,15 +10,19 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
+  value: {
+    type: String,
+    required: true,
+  },
 })
-const emits = defineEmits(['update:checked'])
+const store = useCardStore()
 function taggleOptionHandler() {
-  emits('update:checked', !props.checked)
+  store.setCheckedOption(props.value)
 }
 </script>
 
 <template>
-  <button :class="checked && 'bg-gray-300'" px-1 text-xs text-gray-700 :checked="checked" flex justify-between content-center whitespace-nowrap @click="taggleOptionHandler">
+  <button :class="checked && 'bg-gray-200'" px-1 text-xs text-gray-700 :checked="checked" flex justify-between content-center whitespace-nowrap @click="taggleOptionHandler">
     <span>{{ name }}</span>
   </button>
 </template>

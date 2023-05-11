@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <span bg-gray-300 px-2px py-1px text-xs text-gray-700>
+  <span bg-gray-200 px-2px py-1px text-xs text-gray-700>
     {{ name }}
   </span>
 </template>
