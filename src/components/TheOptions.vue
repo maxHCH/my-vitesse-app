@@ -16,13 +16,13 @@ const props = defineProps({
   },
 })
 const store = useCardStore()
-function taggleOptionHandler() {
+function toggleOptionHandler() {
   store.setCheckedOption(props.value)
 }
 </script>
 
 <template>
-  <button :class="checked && 'bg-gray-200'" px-1 text-xs text-gray-700 :checked="checked" flex justify-between content-center whitespace-nowrap @click="taggleOptionHandler">
+  <button :class="checked && 'bg-gray-200'" px-1 text-xs text-gray-700 :checked="checked" flex justify-between content-center whitespace-nowrap @click="toggleOptionHandler">
     <span>{{ name }}</span>
   </button>
 </template>
