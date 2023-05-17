@@ -9,12 +9,7 @@ const optionsHandler = computed(() => store.options)
 
 <template>
   <div flex justify-between>
-    <div border-b border-gray-400>
-      <input
-        type="text" appearance-none bg-transparent border-none w-full text-gray-300 py-1 px-2 leading-tight focus:outline-none
-        :placeholder="$t('input_search')"
-      >
-    </div>
+    <TheSelect />
     <div flex>
       <div relative>
         <button icon-btn text-xl mr-2 @click="showTips = !showTips">
