@@ -1,33 +1,34 @@
 <script setup lang="ts">
-import { useCardStore } from '~/stores/card'
+import { useTagStore } from '~/stores/tag'
 
-const store = useCardStore()
+const store = useTagStore()
 const showOptions = ref(false)
+const tags = store.tags
+function checkedTag(tag: string) {
+  store.checkedTag(tag)
+}
 </script>
 
 <template>
   <div class="relative inline-block text-left">
     <div>
       <button
-        inline-flex border border-gray-300 w-full justify-center gap-x-1.5 bg-transparent px-2 py-1 text-sm hover:bg-gray-50 :aria-expanded="showOptions"
+        flex border border-gray-300 w-full justify-center items-center gap-x-1.5 bg-transparent px-2 py-1 text-sm hover:bg-gray-500 :aria-expanded="showOptions"
         aria-haspopup="true"
         @click="() => showOptions = !showOptions"
       >
-        Options
-        <div i-carbon:chevron-sort-down inline-block />
+        <div i-carbon:add inline-block />
+        {{ $t('form.input_filter') }}
       </button>
     </div>
-    <div v-show="showOptions" absolute z-10 mt-1 origin-top-right bg-white border-1 border-gray-300 role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div v-show="showOptions" w-full absolute z-10 mt-1 origin-top-right bg-white dark:bg-gray-500 border-1 border-gray-300 role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
       <div py-1 role="none">
-        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-        <button id="menu-item-0" href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">
-          Account settings
-        </button>
-        <button id="menu-item-1" href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">
-          Support
-        </button>
-        <button id="menu-item-2" href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">
-          License
+        <button
+          v-for="item of tags" :key="item.value"
+          :class="{ 'bg-gray-300': item.checked }" text-gray-700 dark:text-white block w-full py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-300 role="menuitem" tabindex="-1" :disabled="item.checked"
+          @click="checkedTag(item.value)"
+        >
+          {{ item.value }}
         </button>
       </div>
     </div>

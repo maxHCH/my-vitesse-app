@@ -1,6 +1,5 @@
 {
   "title": "Plants Record",
-  "input_search": "search",
   "button": {
     "about": "About",
     "back": "Back",
@@ -12,6 +11,9 @@
   "options": {
     "date": "Date",
     "tags": "Tags"
+  },
+  "form" : {
+    "input_filter": "filter"
   },
   "not-found": "Not found"
 }

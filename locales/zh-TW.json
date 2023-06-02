@@ -1,6 +1,5 @@
 {
   "title": "植物紀錄",
-  "input_search": "搜尋",
   "button": {
     "about": "關於",
     "back": "返回",
@@ -12,6 +11,9 @@
   "options": {
     "date": "日期",
     "tags": "標籤"
+  },
+  "form" : {
+    "input_filter": "篩選"
   },
   "not-found": "頁面未找到"
 }
