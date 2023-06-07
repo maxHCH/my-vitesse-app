@@ -13,7 +13,8 @@
     "tags": "標籤"
   },
   "form" : {
-    "input_filter": "篩選"
+    "input_filter": "篩選",
+    "select":"請選擇"
   },
   "not-found": "頁面未找到"
 }

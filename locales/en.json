@@ -13,7 +13,8 @@
     "tags": "Tags"
   },
   "form" : {
-    "input_filter": "filter"
+    "input_filter": "filter",
+    "select":"select"
   },
   "not-found": "Not found"
 }

@@ -16,6 +16,7 @@ export const useTagStore = defineStore('tags', () => {
       checked: false,
     }])
 
+  const checkedTagList = computed(() => tags.filter(item => item.checked))
   const tagValueList = computed(() => tags.map(item => item.value))
 
   function tagsHandler(value: string, isRemove = false) {
@@ -46,6 +47,7 @@ export const useTagStore = defineStore('tags', () => {
 
   return {
     tags,
+    checkedTagList,
     tagsHandler,
     checkedTag,
   }
