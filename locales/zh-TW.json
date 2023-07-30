@@ -13,8 +13,12 @@
     "tags": "標籤"
   },
   "form" : {
+    "new_title": "新增植物",
+    "edit_title": "編輯植物",
     "input_filter": "篩選",
-    "select":"請選擇"
+    "select":"請選擇",
+    "planting_time": "種植時間",
+    "tag": "標籤"
   },
   "not-found": "頁面未找到"
 }

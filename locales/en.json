@@ -13,8 +13,12 @@
     "tags": "Tags"
   },
   "form" : {
+    "new_title": "New Plant",
+    "edit_title": "Edit Plant",
     "input_filter": "filter",
-    "select":"select"
+    "select":"select",
+    "planting_time": "planting time",
+    "tag": "tag"
   },
   "not-found": "Not found"
 }

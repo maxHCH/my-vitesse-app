@@ -8,13 +8,30 @@ interface Tag {
 export const useTagStore = defineStore('tags', () => {
   const tags: Tag[] = reactive([
     {
-      value: '嚴龍',
+      value: '龍舌蘭',
       checked: false,
     },
     {
       value: '陽台',
       checked: false,
-    }])
+    },
+    {
+      value: '房間',
+      checked: false,
+    },
+    {
+      value: '大戟',
+      checked: false,
+    },
+    {
+      value: '竹夾',
+      checked: false,
+    },
+    {
+      value: '樓頂',
+      checked: false,
+    },
+  ])
 
   const checkedTagList = computed(() => tags.filter(item => item.checked))
   const tagValueList = computed(() => tags.map(item => item.value))

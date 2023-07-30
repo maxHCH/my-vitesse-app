@@ -20,6 +20,7 @@ declare module '@vue/runtime-core' {
     TheModel: typeof import('./src/components/TheModel.vue')['default']
     TheNav: typeof import('./src/components/TheNav.vue')['default']
     TheOptions: typeof import('./src/components/TheOptions.vue')['default']
+    ThePlantDetail: typeof import('./src/components/ThePlantDetail.vue')['default']
     TheSelect: typeof import('./src/components/TheSelect.vue')['default']
     TheTag: typeof import('./src/components/TheTag.vue')['default']
   }
